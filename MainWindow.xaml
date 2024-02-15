@@ -1,0 +1,52 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Weather App" Height="650" Width="580">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="CityTextBox" Width="200" Text="" Padding="0" Height="30" FontSize="20"/>
+            <Button x:Name="CheckWeatherButton" Width="106" Height="30" Content="Check Weather" Click="CheckWeatherButton_Click" Margin="10 0 0 0"/>
+            <Image x:Name="WeatherIconImage" Width="50" Height="50" Margin="20 0 0 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Latitude:" VerticalAlignment="Center"/>
+            <TextBox x:Name="LatTextBox" Width="100" Margin="5"/>
+            <TextBlock Text="Longitude:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox x:Name="LonTextBox" Width="100" Margin="5"/>
+            <Button Width="200" Height="30" Content="Check Weather by Coordinates" Click="CheckWeatherByCoordinatesButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="10">
+            <TextBlock Text="Current Weather:" FontWeight="Bold" />
+            <TextBlock x:Name="TemperatureTextBlock" Margin="0,5"/>
+            <TextBlock x:Name="DescriptionTextBlock" Margin="0,5"/>
+            <TextBlock x:Name="HumidityTextBlock" Margin="0,5"/>
+            <TextBlock x:Name="WindSpeedTextBlock" Margin="0,5"/>
+            <TextBlock x:Name="VisibilityTextBlock" Margin="0,5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="10">
+            <TextBlock Text="Forecast for the Next Few Days:" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock x:Name="Day1TextBlock" Margin="0,0,0,5"/>
+            <TextBlock x:Name="Day2TextBlock" Margin="0,0,0,5"/>
+            <TextBlock x:Name="Day3TextBlock" Margin="0,0,0,5"/>
+            <TextBlock x:Name="Day4TextBlock" Margin="0,0,0,5"/>
+            <TextBlock x:Name="Day5TextBlock" Margin="0,0,0,5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Margin="10">
+            <TextBlock Text="Hourly Forecast:" FontWeight="Bold" Margin="0,0,0,10"/>
+            <StackPanel x:Name="HourlyForecastPanel"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
