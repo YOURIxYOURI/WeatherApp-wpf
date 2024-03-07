@@ -82,7 +82,7 @@ namespace WeatherApp
             WeatherIconImage.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri($"http:{currentWeather.Condition.Icon}"));
 
             // Forecast for the next few days
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 var dailyForecast = weatherApiResponse.Forecast.ForecastDays[i];
                 var textBlock = FindName($"Day{i + 1}TextBlock") as TextBlock;
